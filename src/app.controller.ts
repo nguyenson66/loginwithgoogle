@@ -10,7 +10,7 @@ export class AppController {
   @UseGuards(AuthGuard('google'))
   getHello() {}
 
-  @Get('/auth')
+  @Get('/auth/google')
   @UseGuards(AuthGuard('google'))
   googleCallBack(@Req() req) {
     return req.user;
