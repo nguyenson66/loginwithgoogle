@@ -8,11 +8,14 @@ export class AppController {
 
   @Get()
   @UseGuards(AuthGuard('google'))
-  getHello() {}
+  getHello() {
+    return 'done';
+  }
 
   @Get('/auth/google')
   @UseGuards(AuthGuard('google'))
   googleCallBack(@Req() req) {
+    console.log(req.user);
     return req.user;
   }
 }
