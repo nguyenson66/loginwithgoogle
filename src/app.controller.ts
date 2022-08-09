@@ -9,7 +9,7 @@ export class AppController {
   @Get()
   @UseGuards(AuthGuard('google'))
   getHello() {
-    return 'done';
+    return 'test a 2';
   }
 
   @Get('/auth/google')
