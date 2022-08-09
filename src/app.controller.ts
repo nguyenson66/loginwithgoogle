@@ -16,6 +16,7 @@ export class AppController {
   @UseGuards(AuthGuard('google'))
   googleCallBack(@Req() req) {
     console.log(req.user);
+    this.getHello();
     return req.user;
   }
 }
