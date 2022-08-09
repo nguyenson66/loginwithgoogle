@@ -1,4 +1,4 @@
-import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AppService } from './app.service';
 
@@ -9,13 +9,12 @@ export class AppController {
   @Get()
   @UseGuards(AuthGuard('google'))
   getHello() {
-    return 'test a 2';
+    console.log('hihi');
   }
 
-  @Get('/auth/google')
+  @Get('/auth/facebook')
   @UseGuards(AuthGuard('google'))
   googleCallBack(@Req() req) {
-    console.log(req.user);
     return req.user;
   }
 }
